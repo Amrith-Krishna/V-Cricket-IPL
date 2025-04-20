@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>IPL Match Predictor Schedule</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body style="background-image: url(images/bg2.png)">
+    <div
+      class="button-container"
+      id="buttonContainer"
+      style="display: flex; flex-direction: row"
+    >
+      <button onclick="showLeaderboard()">Leaderboard</button>
+      <button onclick="showTodayMatch()">Today's Predictions</button>
+      <button onclick="showSchedule()">Schedule</button>
+    </div>
+    <div class="matches-container" id="matchesContainer">
+      <h2>Matches</h2>
+      <div id="matchesList"></div>
+    </div>
+    <div class="today-predictions-container" id="todayPredictionsContainer">
+      <h2>Today's Predictions</h2>
+      <div id="todayPredictionsList"></div>
+    </div>
+    <div class="user-info">
+    </div>
+    <script src="./today.js"></script>
+  </body>
+</html>

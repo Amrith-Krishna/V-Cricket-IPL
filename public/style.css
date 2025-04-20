@@ -1,0 +1,373 @@
+/* General Styles */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 100vh;
+  max-width: 100vw;
+  margin: 20px;
+  padding: 20px;
+  color: darkblue;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/bg.gif");
+}
+
+* {
+  padding: 2px 2px 2px 2px;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+
+.match-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex; /* Enable flexbox for the match item */
+  flex-direction: column; /* Stack text content above logos by default */
+  align-items: center; /* Center items horizontally by default */
+}
+
+.teams-container {
+  display: flex; /* Enable flexbox for logos */
+  align-items: center; /* Vertically align logos */
+  margin-top: 10px; /* Add some space above the logos */
+  justify-content: center; /* Center the logos horizontally */
+}
+
+/* Team Logos */
+.team-logo {
+  width: 130px; /* Increased size */
+  height: 130px; /* Increased size */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid blue;
+  margin: 0 15px; /* Slightly increased margin for spacing */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #8888bb, #7777cc);
+  transition: transform 0.2s ease;
+}
+
+.winner-logo {
+  background: linear-gradient(to bottom right, yellow, green);
+}
+
+.team-logo img {
+  width: 80%; /* Adjust to fit within the larger circle */
+  height: 80%; /* Adjust to fit within the larger circle */
+  object-fit: contain;
+}
+
+/* Containers */
+.login-container,
+.leaderboard-container,
+.matches-container,
+.today-predictions-container {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.matches-container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings */
+h2 {
+  font-size: 36px;
+  padding: 0px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #e0f7fa;
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  text-transform: capitalize;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #4caf50;
+  color: #fff;
+  transition: 0.3s ease;
+  margin: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  opacity: 0.9;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* Match Items */
+.match-item {
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-size: large;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: center;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* User Info Box */
+.user-info {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Predictions Section */
+.today-predictions-container {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  max-width: 550px;
+}
+
+.today-predictions-container h2 {
+  color: #e0f7fa;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+#todayPredictionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todayPredictionsList div {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Filter Container */
+#filterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Distribute space around items */
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 95%; /* Take up most of the matches-container width */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 10px; /* Space between filter elements */
+}
+
+#filterContainer label {
+  font-size: 16px;
+  color: #e0f7fa;
+  font-weight: 500;
+  white-space: nowrap; /* Prevent label wrapping */
+}
+
+#teamFilter,
+#statusFilter {
+  flex: 1 1 auto; /* Allow them to grow and shrink */
+  min-width: 150px; /* Minimum width to avoid collapsing */
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+#teamFilter:hover,
+#statusFilter:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Style the dropdown options */
+#teamFilter option,
+#statusFilter option {
+  color: black; /* Default text color for options */
+  background-color: white; /* Default background color for options */
+}
+
+/* Style the dropdown options on hover */
+#teamFilter option:hover,
+#statusFilter option:hover {
+  background-color: #007bff !important; /* Use !important to ensure override */
+  color: white !important;
+}
+
+/* Style the selected option */
+#teamFilter option:checked,
+#statusFilter option:checked {
+  background-color: #28a745 !important; /* Use !important to ensure override */
+  color: white !important;
+}
+
+/* Style the focused state of the select element itself */
+#teamFilter:focus,
+#statusFilter:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .button-container button {
+    flex: 1 1 auto;
+    margin: 5px;
+  }
+
+  #filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  #filterContainer label {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  #teamFilter,
+  #statusFilter {
+    width: 100%;
+    min-width: auto;
+  }
+}
+/* Style for the "Match Ongoing" message */
+.match-ongoing-message {
+  background-color: #dc3545; /* Red background */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  position: absolute; /* Position it within the match item */
+  top: 10px;
+  right: 10px;
+  z-index: 10; /* Ensure it's above other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure match-item is positioned for absolute positioning of the message */
+.match-item {
+  /* ... other styles ... */
+  position: relative; /* Add this if it's not already there */
+  overflow: hidden; /* To contain the absolutely positioned element if needed */
+}
+@media (max-width: 480px) {
+  .login-container,
+  .leaderboard-container,
+  .matches-container,
+  .today-predictions-container {
+    max-width: 98%;
+  }
+
+  .team-logo {
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+    margin: 0 10px;
+  }
+
+  .button-container button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+#leaderboardBody {
+  color: black;
+  text-align: left;
+  font-size: 1.2rem;
+}
